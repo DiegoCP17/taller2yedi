@@ -1,12 +1,15 @@
+// Importamos los módulos necesarios.
 import * as React from "react";
 import * as RN from "react-native";
 import { baseDatos } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { useNavigation } from "@react-navigation/native";
 
+// Creamos el componente Agregar.
 export default function Agregar() {
   const navigation = useNavigation();
 
+  // Definimos el estado inicial de newObjeto y su actualización.
   const [newObjeto, setNewObjeto] = React.useState({
     imagen: "🛒",
     nombre: "",
@@ -16,11 +19,13 @@ export default function Agregar() {
     creadoEn: new Date(),
   });
 
+  // Definimos la función enviar que se encargará de guardar el objeto en Firestore.
   const enviar = async () => {
     await addDoc(collection(baseDatos, "objetos"), newObjeto);
     navigation.goBack();
   };
 
+  // Renderizamos la pantalla de Agregar.
   return (
     <RN.View style={styles.container}>
       <RN.Text style={styles.title}>Agregar objeto</RN.Text>
@@ -49,6 +54,7 @@ export default function Agregar() {
   );
 }
 
+// Definimos los estilos para la pantalla de Agregar.
 const styles = RN.StyleSheet.create({
   container: {
     flex: 1,
