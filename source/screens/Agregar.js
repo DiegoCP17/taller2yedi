@@ -23,7 +23,7 @@ export default function Agregar() {
   const enviar = async () => {
     await addDoc(collection(baseDatos, "objetos"), newObjeto);
     navigation.goBack();
-  };
+  }
 
   // Renderizamos la pantalla de Agregar.
   return (
@@ -31,24 +31,24 @@ export default function Agregar() {
       <RN.Text style={styles.title}>Agregar objeto</RN.Text>
       <RN.Text style={styles.imagen}>🛒</RN.Text>
       <RN.TextInput
-        style={styles.inputContainer}
-        placeholder="Nombre"
-        onChangeText={(text) => setNewObjeto({ ...newObjeto, nombre: text })}
+      style={styles.inputContainer}
+      placeholder='Nombre'
+      onChangeText={(text) => setNewObjeto({ ...newObjeto, nombre: text })}
       />
       <RN.TextInput
-        style={styles.inputContainer}
-        placeholder="Descripción"
-        onChangeText={(text) =>
-          setNewObjeto({ ...newObjeto, descripcion: text })
-        }
+      style={styles.inputContainer}
+      placeholder='Descripción'
+      onChangeText={(text) =>
+      setNewObjeto({ ...newObjeto, descripcion: text })
+      }
       />
       <RN.TextInput
-        style={styles.inputContainer}
-        placeholder="$ Precio"
-        keyboardType="number-pad"
-        onChangeText={(text) => setNewObjeto({ ...newObjeto, precio: text })}
+      style={styles.inputContainer}
+      placeholder='$ Precio'
+      keyboardType='number-pad'
+      onChangeText={(text) => setNewObjeto({ ...newObjeto, precio: text })}
       />
-      <RN.Button title="Guardar" onPress={enviar} />
+      <RN.Button title='Guardar' onPress={enviar} />
       <RN.Text>{JSON.stringify(newObjeto)}</RN.Text>
     </RN.View>
   );

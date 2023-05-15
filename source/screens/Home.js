@@ -37,7 +37,7 @@ export default function Home() {
     // Suscripción a los cambios en la base de datos y actualización del estado de React con los objetos obtenidos
     const desuscribir = onSnapshot(q, (querySnapshot) => {
       setObjetos(
-        querySnapshot.docs.map((doc) => ({
+        querySnapshot.docs.map(doc => ({
           id: doc.id,
           imagen: doc.data().imagen,
           nombre: doc.data().nombre,
