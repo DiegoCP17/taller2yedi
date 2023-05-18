@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 function Mystack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Inicio" component={Home} />
+      <Stack.Screen name="Dashboard" component={Home} />
       <Stack.Screen
         name="Agregar"
         component={Agregar}

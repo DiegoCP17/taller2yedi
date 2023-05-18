@@ -27,8 +27,15 @@ export default function Objeto({
   return (
     <RN.View style={styles.objetoContainer}>
       <RN.View style={styles.conEliminar}>
-        <RN.Text style={styles.imagen}>{imagen}</RN.Text>
-        <AntDesign onPress={eliminar} name="delete" size={25} />
+        <RN.Text style={styles.imagen}>
+          {imagen}
+          <AntDesign
+            style={styles.botoneliminar}
+            onPress={eliminar}
+            name="closecircle"
+            size={25}
+          />
+        </RN.Text>
       </RN.View>
       <RN.Text style={styles.nombre}>{nombre}</RN.Text>
       <RN.Text style={styles.descripcion}>{descripcion}</RN.Text>
@@ -49,7 +56,7 @@ export default function Objeto({
 const styles = RN.StyleSheet.create({
   objetoContainer: {
     flex: 1,
-    backgroundColor: "green",
+    backgroundColor: "#fff",
     alignItems: "center",
   },
   nombre: {
@@ -63,10 +70,13 @@ const styles = RN.StyleSheet.create({
   imagen: {
     fontSize: 100,
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: "#FF1B00",
+    shadowColor: "#FF1B00",
+    elevation: 8,
     borderRadius: 10,
     padding: 10,
     marginVertical: 6,
+    position: "relative",
   },
   inputContainer: {
     width: "90%",
@@ -79,10 +89,20 @@ const styles = RN.StyleSheet.create({
   conEliminar: {
     flexDirection: "row",
     justifyContent: "space-between",
+    position: "relative",
   },
   button: {
-    borderRadius: 10,
-    color: "#f0f",
-    backgroundColor: "#ddd",
+    borderRadius: 5,
+    color: "#230FEF",
+    backgroundColor: "#2CADCC",
+    fontWeight: "bold",
+    width: 70,
+    textAlign: "center",
+  },
+  botoneliminar: {
+    color: "#FF1B00",
+    position: "absolute",
+    top: 0,
+    right: 0,
   },
 });

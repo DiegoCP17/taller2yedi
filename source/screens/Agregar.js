@@ -58,7 +58,7 @@ export default function Agregar() {
 const styles = RN.StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "green",
+    backgroundColor: "#FFF",
     alignItems: "center",
   },
   title: {
@@ -66,7 +66,7 @@ const styles = RN.StyleSheet.create({
     fontWeight: "700",
   },
   imagen: {
-    fontSize: 100,
+    fontSize: 50,
     borderWidth: 1,
     borderColor: "#ddd",
     borderRadius: 10,
