@@ -28,7 +28,7 @@ export default function Agregar() {
   // Renderizamos la pantalla de Agregar.
   return (
     <RN.View style={styles.container}>
-      <RN.Text style={styles.title}>Agregar objeto</RN.Text>
+      <RN.Text style={styles.title}>Agregar Producto</RN.Text>
       <RN.Text style={styles.imagen}>🛒</RN.Text>
       <RN.TextInput
         style={styles.inputContainer}
@@ -48,8 +48,10 @@ export default function Agregar() {
         keyboardType="number-pad"
         onChangeText={(text) => setNewObjeto({ ...newObjeto, precio: text })}
       />
+
       <RN.Button title="Guardar" onPress={enviar} />
-      <RN.Text>{JSON.stringify(newObjeto)}</RN.Text>
+
+      {/* <RN.Text>{JSON.stringify(newObjeto)}</RN.Text> */}
     </RN.View>
   );
 }
@@ -66,9 +68,9 @@ const styles = RN.StyleSheet.create({
     fontWeight: "700",
   },
   imagen: {
-    fontSize: 50,
+    fontSize: 70,
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: "#FF1B00",
     borderRadius: 10,
     padding: 10,
     marginVertical: 6,
@@ -78,7 +80,7 @@ const styles = RN.StyleSheet.create({
     padding: 13,
     marginVertical: 6,
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: "#19D8E7",
     borderRadius: 6,
   },
 });

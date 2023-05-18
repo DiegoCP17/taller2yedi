@@ -6,6 +6,7 @@ import { baseDatos } from "../config/firebase";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import Objeto from "../components/Objeto";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 // Creación del componente Home
 export default function Home() {
@@ -68,23 +69,34 @@ export default function Home() {
 
   // Renderización de la pantalla principal con la lista de objetos obtenida de la base de datos
   return (
-    <View style={styles.container}>
-      <RN.Text style={styles.text}>
-        Aqui podras ver tu Articulos agregados y podras ver su estado o
-        eliminarlo si no lo requieres en tu pedido.
-      </RN.Text>
-      {objetos.map((objeto) => (
-        <Objeto key={objeto.id} {...objeto} />
-      ))}
+    <View style={styles.mainContainer}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <RN.Text style={styles.text}>
+          Aquí podrás ver tus Artículos agregados, ver su estado o eliminarlos
+          si no lo requieres en tu pedido.
+        </RN.Text>
+        <View style={styles.objetosContainer}>
+          {objetos.map((objeto) => (
+            <Objeto key={objeto.id} {...objeto} />
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 }
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
     backgroundColor: "#fff",
+  },
+  container: {
+    flexGrow: 1,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+  },
+  objetosContainer: {
+    flexGrow: 1,
+    alignItems: "center",
   },
   buttonContainer: {
     flexDirection: "row",
@@ -96,12 +108,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#DE4220",
     borderRadius: 8,
     paddingVertical: 12,
-    paddingHorizontal: 24,
-    marginVertical: 8,
+    paddingHorizontal: 10,
+    marginVertical: 4,
     marginHorizontal: 4,
   },
   buttonText: {
-    color: "#333333",
+    color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
   },

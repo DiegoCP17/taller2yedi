@@ -25,7 +25,7 @@ export default function Objeto({
   };
 
   return (
-    <RN.View style={styles.objetoContainer}>
+    <RN.ScrollView contentContainerStyle={styles.objetoContainer}>
       <RN.View style={styles.conEliminar}>
         <RN.Text style={styles.imagen}>
           {imagen}
@@ -42,22 +42,23 @@ export default function Objeto({
       <RN.Text style={styles.precio}>${precio}</RN.Text>
       {vendido ? (
         <RN.TouchableOpacity style={styles.button}>
-          <RN.Text style={styles.button}>Cargado</RN.Text>
+          <RN.Text style={styles.button}>Comprado!!</RN.Text>
         </RN.TouchableOpacity>
       ) : (
         <RN.TouchableOpacity style={styles.button} onPress={editar}>
-          <RN.Text style={styles.button}>Cargar</RN.Text>
+          <RN.Text style={styles.button}>Comprar ?</RN.Text>
         </RN.TouchableOpacity>
       )}
-    </RN.View>
+    </RN.ScrollView>
   );
 }
 
 const styles = RN.StyleSheet.create({
   objetoContainer: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: "#fff",
     alignItems: "center",
+    paddingVertical: 10,
   },
   nombre: {
     fontSize: 34,
@@ -90,14 +91,17 @@ const styles = RN.StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     position: "relative",
+    marginTop: 10,
   },
   button: {
     borderRadius: 5,
-    color: "#230FEF",
-    backgroundColor: "#2CADCC",
+    color: "#FF1B00",
+    backgroundColor: "#A49796",
     fontWeight: "bold",
     width: 70,
     textAlign: "center",
+    justifyContent: "center",
+    marginTop: 10,
   },
   botoneliminar: {
     color: "#FF1B00",
