@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { baseDatos } from "../config/firebase";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import Objeto from "../components/Objeto";
+import { ScrollView } from 'react-native-gesture-handler';
 
 // Creación del componente Home
 export default function Home() {
@@ -57,9 +58,11 @@ export default function Home() {
   return (
     <>
       <RN.Text>Objetos</RN.Text>
-      {objetos.map((objeto) => (
+      <ScrollView>
+      {objetos.map(objeto => 
         <Objeto key={objeto.id} {...objeto} />
-      ))}
+      )}
+      </ScrollView>
     </>
   );
 }
