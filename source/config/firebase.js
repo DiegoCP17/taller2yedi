@@ -1,6 +1,11 @@
 // Importamos las funciones necesarias desde la biblioteca de firebase y Constants de expo.
+<<<<<<< HEAD
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+=======
+import {initializeApp} from "firebase/app";
+import {getFirestore} from "firebase/firestore";
+>>>>>>> diego
 import Constants from "expo-constants";
 
 // Configuración de firebase con los valores extra de Constants de Expo.

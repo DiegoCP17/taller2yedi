@@ -28,7 +28,11 @@ export default function Agregar() {
   // Renderizamos la pantalla de Agregar.
   return (
     <RN.View style={styles.container}>
+<<<<<<< HEAD
       <RN.Text style={styles.title}>Agregar objeto</RN.Text>
+=======
+      <RN.Text style={styles.title}>Agregar Producto</RN.Text>
+>>>>>>> diego
       <RN.Text style={styles.imagen}>🛒</RN.Text>
       <RN.TextInput
         style={styles.inputContainer}
@@ -48,8 +52,15 @@ export default function Agregar() {
         keyboardType="number-pad"
         onChangeText={(text) => setNewObjeto({ ...newObjeto, precio: text })}
       />
+<<<<<<< HEAD
       <RN.Button title="Guardar" onPress={enviar} />
       <RN.Text>{JSON.stringify(newObjeto)}</RN.Text>
+=======
+
+      <RN.Button title="Guardar" onPress={enviar} />
+
+      {/* <RN.Text>{JSON.stringify(newObjeto)}</RN.Text> */}
+>>>>>>> diego
     </RN.View>
   );
 }
@@ -58,7 +69,11 @@ export default function Agregar() {
 const styles = RN.StyleSheet.create({
   container: {
     flex: 1,
+<<<<<<< HEAD
     backgroundColor: "green",
+=======
+    backgroundColor: "#FFF",
+>>>>>>> diego
     alignItems: "center",
   },
   title: {
@@ -66,9 +81,15 @@ const styles = RN.StyleSheet.create({
     fontWeight: "700",
   },
   imagen: {
+<<<<<<< HEAD
     fontSize: 100,
     borderWidth: 1,
     borderColor: "#ddd",
+=======
+    fontSize: 70,
+    borderWidth: 1,
+    borderColor: "#FF1B00",
+>>>>>>> diego
     borderRadius: 10,
     padding: 10,
     marginVertical: 6,
@@ -78,7 +99,11 @@ const styles = RN.StyleSheet.create({
     padding: 13,
     marginVertical: 6,
     borderWidth: 1,
+<<<<<<< HEAD
     borderColor: "#ddd",
+=======
+    borderColor: "#19D8E7",
+>>>>>>> diego
     borderRadius: 6,
   },
 });
