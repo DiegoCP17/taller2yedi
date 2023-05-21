@@ -30,18 +30,17 @@ export default function Catalogo() {
       <RN.ScrollView contentContainerStyle={styles.contentContainer}>
         <RN.Text style={styles.title}>Catálogo de Productos</RN.Text>
 
-        {/* Aquí puedes agregar las tarjetas (Card) de los productos */}
         <Card
           imagen="🛒"
-          nombre="Producto 1"
-          descripcion="Descripción del producto 1"
-          precio={10}
+          nombre="Galletas"
+          descripcion="Saltin NOEL"
+          precio={7000}
           onPress={() =>
             handleAgregar({
               imagen: "🛒",
-              nombre: "Producto 1",
-              descripcion: "Descripción del producto 1",
-              precio: 10,
+              nombre: "Galletas ",
+              descripcion: "Saltin NOEL",
+              precio: 7000,
               vendido: false,
               creadoEn: new Date(),
             })
@@ -50,15 +49,32 @@ export default function Catalogo() {
 
         <Card
           imagen="🛒"
-          nombre="Producto 2"
-          descripcion="Descripción del producto 2"
-          precio={20}
+          nombre="Jabon Jhonson"
+          descripcion="Pack x3 de jabones olor manzana"
+          precio={12000}
           onPress={() =>
             handleAgregar({
               imagen: "🛒",
-              nombre: "Producto 2",
-              descripcion: "Descripción del producto 2",
-              precio: 20,
+              nombre: "Jabon Jhonson",
+              descripcion: "Pack x3 de jabones olor manzana",
+              precio: 12000,
+              vendido: false,
+              creadoEn: new Date(),
+            })
+          }
+        />
+
+        <Card
+          imagen="🛒"
+          nombre="Papas Fritas"
+          descripcion="Sabor Limon x300g"
+          precio={5000}
+          onPress={() =>
+            handleAgregar({
+              imagen: "🛒",
+              nombre: "Papas Fritas",
+              descripcion: "Sabor Limon x300g",
+              precio: 5000,
               vendido: false,
               creadoEn: new Date(),
             })
@@ -79,7 +95,8 @@ function Card({ imagen, nombre, descripcion, precio, onPress }) {
       <RN.Text style={styles.cardTitle}>{nombre}</RN.Text>
       <RN.Text style={styles.cardDescription}>{descripcion}</RN.Text>
       <RN.Text style={styles.cardPrice}>${precio}</RN.Text>
-      <RN.Button title="Agregar" onPress={onPress} />
+      <br></br> {/* espacio entre boton y precio */}
+      {/* <RN.Button title="Agregar" onPress={onPress} /> */}
     </RN.TouchableOpacity>
   );
 }
@@ -100,10 +117,11 @@ const styles = RN.StyleSheet.create({
   },
   cardContainer: {
     borderWidth: 1,
-    borderColor: "#19D8E7",
+    borderColor: "#FF1B00",
     borderRadius: 6,
     padding: 10,
     marginBottom: 10,
+    alignItems: "center",
   },
   imagen: {
     fontSize: 70,
